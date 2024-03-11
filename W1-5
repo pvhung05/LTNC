@@ -1,0 +1,21 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int max=-10000;
+    int i=0;
+    while(i<=4) {
+        int a;
+        cin >> a;
+        if(a>max) max=a;
+        i++;
+    }
+    cout << max << endl;
+    
+    return 0;
+}
