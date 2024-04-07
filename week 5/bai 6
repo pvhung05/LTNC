@@ -1,0 +1,41 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <set>
+#include <map>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int n;
+    cin >> n;
+    map<string, int> m;
+    string s;
+    while (n--)
+    {
+        int a;
+        cin >> a;
+        if(a==1)
+        {
+            int b;
+            cin >> s >> b;
+            if(m.find(s)==m.end())m[s] = b;
+            else m[s] += b;
+        }
+        else if(a==2)
+        {
+            cin >> s;
+            m.erase(s);
+        }
+        else {
+            cin >> s;
+            cout << m[s] << endl;
+        }
+    }
+    return 0;
+}
+
+
+
