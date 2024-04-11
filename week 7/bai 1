@@ -1,0 +1,35 @@
+#include <iostream>
+#include <algorithm>
+
+int const N = 1005;
+using namespace std;
+
+int BinarySearch(int left, int right, int key, int arr[])
+{
+	if (left <= right)
+	{
+		int m = left + (right - left) / 2;
+		if (arr[m] == key) return m;
+		else if (arr[m] < key && m < right)
+		{
+			return BinarySearch(m + 1, right, key, arr);
+		}
+		else if (arr[m] > key && m > left)
+		{
+			return BinarySearch(left, m - 1, key, arr);
+		}
+	}
+	else return 0;
+}
+
+int main()
+{
+	int arr[N];
+	for (int i = 0; i < 8; i++)
+	{
+		cin >> arr[i];
+	}
+	sort(arr, arr + 8);
+	cout << BinarySearch(0, 7, 5, arr);
+	return 0;
+}
